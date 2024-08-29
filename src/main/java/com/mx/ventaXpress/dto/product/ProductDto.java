@@ -1,4 +1,5 @@
-package com.mx.ventaXpress.controller.product.dto;
+package com.mx.ventaXpress.dto.product;
+
 
 import com.mx.ventaXpress.model.brand.Brand;
 import com.mx.ventaXpress.model.category.Category;
@@ -28,22 +29,21 @@ public class ProductDto {
     private Brand brand;
     private Boolean status;
     private Supplier supplier;
+    public Product getProduct(){
 
-   public Product getProduct(){
-
-       return new Product(
-               getId(),
-               getNombre(),
-               getDescripcion(),
-               getPrecioCompra(),
-               getPrecioVenta(),
-               getStock(),
-               getFechaCaducidad(),
-               getFechaCompra(),
-               getStatus(),
-               getCategory(),
-               getBrand(),
-               getSupplier()
-       );
-   }
+        return new Product(
+                getId(),
+                getNombre(),
+                getDescripcion(),
+                getPrecioCompra(),
+                getPrecioVenta(),
+                getStock(),
+                getFechaCaducidad(),
+                getFechaCompra(),
+                getStatus(),
+                getCategory(),
+                getBrand(),
+                getSupplier()
+        );
+    }
 }

@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SaleService {
@@ -31,5 +33,15 @@ public class SaleService {
                 200,
                 "List sales is empty"
         );
+    }
+
+    @Transactional(rollbackFor = {SQLException.class})
+    public Response<Sale> insert(Sale sale){
+            return new Response<>(
+                    this.repository.save(sale),
+                    false,
+                    200,
+                    "OK"
+            );
     }
 }

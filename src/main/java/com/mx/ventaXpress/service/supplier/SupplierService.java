@@ -53,4 +53,24 @@ public class SupplierService {
                 "Error in save register"
         );
     }
+
+    @Transactional(rollbackFor = {SQLException.class})
+    public Response<Supplier> changeStatus(long id){
+        Optional<Supplier> exist = repository.findById(id);
+       if (exist.isPresent()){
+           exist.get().setStatus(!exist.get().getStatus());
+           return new Response<>(
+                   this.repository.saveAndFlush(exist.get()),
+                   false,
+                   200,
+                   "Changed status of register to " + exist.get().getNombre()
+           );
+       }
+       return new Response<>(
+               null,
+               true,
+               400,
+               "Error in change status"
+       );
+    }
 }

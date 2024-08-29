@@ -1,7 +1,7 @@
 package com.mx.ventaXpress.controller.product;
 
 
-import com.mx.ventaXpress.controller.product.dto.ProductDto;
+import com.mx.ventaXpress.dto.product.ProductDto;
 import com.mx.ventaXpress.model.product.Product;
 import com.mx.ventaXpress.service.product.ProductService;
 import com.mx.ventaXpress.utils.Response;
@@ -28,9 +28,9 @@ public class ProductController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<Response<Product>> insert(@RequestBody Product product){
+    public ResponseEntity<Response<Product>> insert(@RequestBody ProductDto product){
         return new ResponseEntity<>(
-                this.service.insert(product), HttpStatus.CREATED
+                this.service.insert(product.getProduct()), HttpStatus.CREATED
         );
     }
 

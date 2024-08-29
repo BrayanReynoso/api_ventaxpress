@@ -1,4 +1,5 @@
-package com.mx.ventaXpress.controller.category.dto;
+package com.mx.ventaXpress.dto.category;
+
 
 import com.mx.ventaXpress.model.category.Category;
 import lombok.AllArgsConstructor;
@@ -17,7 +18,7 @@ public class CategoryDto {
     private Boolean status;
     public Category getCategory(){
         return new Category(
-               getId(),
+                getId(),
                 getNombre(),
                 getDescripcion(),
                 getStatus()

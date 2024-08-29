@@ -1,6 +1,6 @@
 package com.mx.ventaXpress.controller.category;
 
-import com.mx.ventaXpress.controller.category.dto.CategoryDto;
+import com.mx.ventaXpress.dto.category.CategoryDto;
 import com.mx.ventaXpress.model.category.Category;
 import com.mx.ventaXpress.service.category.CategoryService;
 import com.mx.ventaXpress.utils.Response;

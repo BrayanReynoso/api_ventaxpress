@@ -1,6 +1,6 @@
 package com.mx.ventaXpress.controller.brand;
 
-import com.mx.ventaXpress.controller.brand.dto.BrandDto;
+import com.mx.ventaXpress.dto.brand.BrandDto;
 import com.mx.ventaXpress.model.brand.Brand;
 import com.mx.ventaXpress.service.brand.BrandService;
 import com.mx.ventaXpress.utils.Response;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("${API-URL}")
+@RequestMapping("${API-URL}/brand")
 @CrossOrigin("*")
 public class BrandController {
     @Autowired

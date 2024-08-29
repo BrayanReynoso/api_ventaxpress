@@ -1,5 +1,6 @@
 package com.mx.ventaXpress.model.sale;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mx.ventaXpress.model.product.Product;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -28,10 +29,11 @@ public class SaleDetails {
     private Boolean status;
 
     @ManyToOne
-    @JoinColumn(name = "id_product")
+    @JoinColumn(name = "id_product", nullable = false)
     private Product product;
 
     @ManyToOne
-    @JoinColumn(name = "id_sale")
+    @JoinColumn(name = "id_sale", nullable = false)
+    @JsonIgnore
     private Sale sale;
 }

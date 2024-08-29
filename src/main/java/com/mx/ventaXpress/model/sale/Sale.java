@@ -1,9 +1,12 @@
 package com.mx.ventaXpress.model.sale;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.lang.reflect.Type;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -26,5 +29,7 @@ public class Sale {
     @Column(nullable = false, length = 4)
     private Boolean status;
 
-
+    // Si prefieres mantener solo los IDs
+    @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<SaleDetails> saleDetails;
 }

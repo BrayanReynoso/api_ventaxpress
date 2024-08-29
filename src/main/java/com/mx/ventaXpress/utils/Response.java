@@ -10,8 +10,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Response <T>{
-    private T data;
-    private Boolean error;
-    private int status;
-    private String message;
+    private T data; // Object
+    private Boolean error; // False
+    private int status; // 200
+    private String message; // OK
 }

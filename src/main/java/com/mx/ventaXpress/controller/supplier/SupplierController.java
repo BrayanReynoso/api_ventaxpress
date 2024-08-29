@@ -32,4 +32,11 @@ public class SupplierController {
                 service.insert(supplier), HttpStatus.OK
         );
     }
+
+    @DeleteMapping("/status/{id}")
+    public ResponseEntity<Response<Supplier>> changeStatus(@PathVariable("id") long id){
+        return new ResponseEntity<>(
+                this.service.changeStatus(id), HttpStatus.OK
+        );
+    }
 }

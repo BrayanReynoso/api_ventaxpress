@@ -3,6 +3,7 @@ package com.mx.ventaXpress.model.product;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mx.ventaXpress.model.brand.Brand;
 import com.mx.ventaXpress.model.category.Category;
+import com.mx.ventaXpress.model.sale.SaleDetails;
 import com.mx.ventaXpress.model.supplier.Supplier;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -58,8 +60,5 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "id_supplier")
     private Supplier supplier;
-
-
-
 
 }
